@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassCheck - Vérificateur de mots de passe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PassCheck</h1>
+            <div class="language-selector">
+                <button onclick="changeLanguage('fr')" class="lang-btn">Français</button>
+                <button onclick="changeLanguage('en')" class="lang-btn">English</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="password-checker">
+                <h2 data-lang="title">Vérifiez la force de votre mot de passe</h2>
+                <div class="password-input-container">
+                    <input type="password" id="passwordInput" placeholder="Entrez votre mot de passe">
+                    <button onclick="togglePasswordVisibility()" class="toggle-password">
+                        <span class="eye-icon">👁️</span>
+                    </button>
+                </div>
+                <button onclick="checkPassword()" class="check-btn" data-lang="check">Vérifier</button>
+
+                <div class="results" id="results">
+                    <div class="score-container">
+                        <h3 data-lang="score">Score de robustesse:</h3>
+                        <div class="score" id="score">-</div>
+                    </div>
+                    <div class="time-container">
+                        <h3 data-lang="time">Temps estimé pour le cracker:</h3>
+                        <div class="time" id="crackTime">-</div>
+                    </div>
+                    <div class="suggestions" id="suggestions">
+                        <h3 data-lang="suggestions">Suggestions d'amélioration:</h3>
+                        <ul id="suggestionsList"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="password-tips">
+                <h2 data-lang="tips-title">Conseils pour un mot de passe sécurisé</h2>
+                <ul>
+                    <li data-lang="tip1">Utilisez au moins 12 caractères</li>
+                    <li data-lang="tip2">Mélangez lettres majuscules et minuscules</li>
+                    <li data-lang="tip3">Incluez des chiffres et des caractères spéciaux</li>
+                    <li data-lang="tip4">Évitez les informations personnelles évidentes</li>
+                    <li data-lang="tip5">Utilisez un mot de passe unique pour chaque service</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
